@@ -48,11 +48,22 @@ class CircuitBuilder:
         """
 
         return self._qubit_count
+    
+    def reset_circuit(self):
+         self._circuit = QuantumCircuit(self._qubit_count)
 
 
 if __name__ == "__main__":
     builder = CircuitBuilder(6)
+
     print("Circuit created successfully!")
+
     print("Number of qubits:", builder.get_qubit_count())
 
+    print("\nInitial Circuit:")
     print(builder.get_circuit())
+
+    builder.reset_circuit()
+
+    print("\nAfter Reset:")
+    print(builder.get_circuit())             
