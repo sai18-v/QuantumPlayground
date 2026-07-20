@@ -35,8 +35,24 @@ class CircuitBuilder:
             raise ValueError(
                 f"Qubit count cannot exceed {self.MAX_QUBITS}."
             )
+        
+    def get_circuit(self):
+             '''
+            return the quantum circuit managed by builder
+             '''  
+             return self._circuit   
+
+    def get_qubit_count(self):
+        """
+        Return the number of qubits in the circuit.
+        """
+
+        return self._qubit_count
 
 
 if __name__ == "__main__":
     builder = CircuitBuilder(6)
     print("Circuit created successfully!")
+    print("Number of qubits:", builder.get_qubit_count())
+
+    print(builder.get_circuit())
