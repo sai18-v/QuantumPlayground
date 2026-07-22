@@ -1,3 +1,5 @@
+import matplotlib.pyplot as plt
+
 from qiskit.quantum_info import Statevector
 from qiskit.visualization import plot_bloch_multivector
 
@@ -47,5 +49,6 @@ if __name__ == "__main__":
 
     figure = bloch.generate_bloch()
 
-    figure.show()
-    input("Press Enter to exit...")
+    figure = bloch.generate_bloch()
+
+    plt.show()
